@@ -1,0 +1,179 @@
+set upf_create_implicit_supply_sets false
+
+#create power Domains
+create_power_domain pd_TOP -include_scope
+create_power_domain pd_modA -elements {A_inst}
+create_power_domain pd_modB -elements {B_inst}
+create_power_domain pd_modC -elements {C_inst}
+create_power_domain pd_modD -elements {D_inst}
+
+#create supply ports
+create_supply_port VDDH -direction in -domain pd_TOP
+create_supply_port VDDL -direction in -domain pd_TOP
+create_supply_port VSS -direction in -domain pd_TOP
+
+#create supply nets
+create_supply_net VDDH -domain pd_TOP
+create_supply_net VDDL -domain pd_TOP
+create_supply_net VSS -domain pd_TOP
+
+create_supply_net ctrl_A -domain pd_modA
+create_supply_net ctrl_B -domain pd_modB
+create_supply_net ctrl_C -domain pd_modC
+create_supply_net ctrl_D -domain pd_modD
+
+#supply nets for module A
+create_supply_net VDDH -domain pd_modA -reuse
+create_supply_net VDDH_A -domain pd_modA
+create_supply_net VSS -domain pd_modA -reuse
+
+#supply nets for module B
+create_supply_net VDDL -domain pd_modB -reuse
+create_supply_net VDDL_B -domain pd_modB
+create_supply_net VSS -domain pd_modB -reuse
+
+#supply nets for module C
+create_supply_net VDDL -domain pd_modC -reuse
+create_supply_net VDDL_C -domain pd_modC
+create_supply_net VSS -domain pd_modC -reuse
+
+#supply net for module D
+create_supply_net VDDH -domain pd_modD -reuse
+create_supply_net VDDH_D -domain pd_modD
+create_supply_net VSS -domain pd_modD -reuse
+
+#connect_supply_nets to ports
+connect_supply_net VDDH -ports {VDDH}
+connect_supply_net VDDL -ports {VDDL}
+connect_supply_net VSS -ports {VSS}
+
+#Primary power connections for the domains
+set_domain_supply_net pd_TOP -primary_power_net VDDH -primary_ground_net VSS
+set_domain_supply_net pd_modA -primary_power_net VDDH_A -primary_ground_net VSS
+set_domain_supply_net pd_modB -primary_power_net VDDL_B -primary_ground_net VSS
+set_domain_supply_net pd_modC -primary_power_net VDDL_C -primary_ground_net VSS
+set_domain_supply_net pd_modD -primary_power_net VDDH_D -primary_ground_net VSS
+
+#create control ports
+#create_port pwr_cntrl_A
+#create_port pwr_cntrl_B
+#create_port pwr_cntrl_C
+#create_port pwr_cntrl_D
+
+#create control ports
+#create_port -direction in {pwr_cntrl_A pwr_cntrl_B pwr_cntrl_C pwr_cntrl_D}
+#create_port pwr_cntrl_A -direction in {ece581_ip_top A_inst}
+#create_port pwr_cntrl_B -direction in {ece581_ip_top B_inst}
+#create_port pwr_cntrl_C -direction in {ece581_ip_top C_inst}
+#create_port pwr_cntrl_D -direction in {ece581_ip_top D_inst}
+
+add_port_state ctrl_A -state {high 1.8} -state {low 0.0}
+add_port_state ctrl_B -state {high 0.85} -state {low 0.0}
+add_port_state ctrl_C -state {high 0.85} -state {low 0.0}
+add_port_state ctrl_D -state {high 1.8} -state {low 0.0}
+
+
+#create power swicthes
+create_power_switch A_switch -domain pd_modA -input_supply_port {VDDH VDDH} -output_supply_port {VDDH_A VDDH_A} -control_port {ctrl_A ctrl_A} -on_state {sw_on VDDH ctrl_A} -off_state {sw_off !ctrl_A}
+create_power_switch B_switch -domain pd_modB -input_supply_port {VDDL VDDL} -output_supply_port {VDDL_B VDDL_B} -control_port {ctrl_B ctrl_B} -on_state {sw_on VDDL ctrl_B} -off_state {sw_off !ctrl_B}
+create_power_switch C_switch -domain pd_modC -input_supply_port {VDDL VDDL} -output_supply_port {VDDL_C VDDL_C} -control_port {ctrl_C ctrl_C} -on_state {sw_on VDDL ctrl_C} -off_state {sw_off !ctrl_C}
+create_power_switch D_switch -domain pd_modD -input_supply_port {VDDH VDDH} -output_supply_port {VDDH_D VDDH_D} -control_port {ctrl_D ctrl_D} -on_state {sw_on VDDH ctrl_D} -off_state {sw_off !ctrl_D}
+
+#map power switches
+map_power_switch A_switch -domain pd_modA -lib_cells {HEADX2_HVT}
+map_power_switch B_switch -domain pd_modB -lib_cells {HEADX2_HVT}
+map_power_switch C_switch -domain pd_modC -lib_cells {HEADX2_HVT}
+map_power_switch D_switch -domain pd_modD -lib_cells {HEADX2_HVT}
+
+#level_Shifters
+
+set_level_shifter ls_modTop2C -elements {C_inst/upf_clk} -domain pd_modC -force_shift  -rule both  -location parent
+set_level_shifter ls_modTop2B -elements {B_inst/upf_clk} -domain pd_modB  -force_shift -rule both -location parent
+
+set_level_shifter is_modA2B -elements {A_inst/lav_Cout_BC} -domain pd_modA -rule high_to_low -location parent
+
+set_level_shifter is_modB2A -elements {B_inst/lav_B2A} -domain pd_modB -rule low_to_high -location parent
+set_level_shifter is_modB2D -elements {B_inst/lav_B2D} -domain pd_modB -rule low_to_high -location parent
+
+set_level_shifter is_modC2A -elements {C_inst/lav_C2A} -domain pd_modC -rule low_to_high -location parent
+set_level_shifter is_modC2D -elements {C_inst/lav_C2D} -domain pd_modC -rule low_to_high -location parent
+
+set_level_shifter is_modD2C -elements {D_inst/lav_D_less_2C} -domain pd_modD -rule high_to_low -location parent
+set_level_shifter is_modD2B -elements {D_inst/lav_D_eq_2B} -domain pd_modD -rule high_to_low -location parent
+
+#Isolation 
+set_isolation iso_A2BCTop -domain pd_modA -isolation_power_net VDDH -isolation_ground_net VSS -clamp_value 0 -elements {A_inst/lav_Cout_BC}
+set_isolation iso_A2D -domain pd_modA -isolation_power_net VDDH -isolation_ground_net VSS -clamp_value 0 -elements {A_inst/lav_A2D}
+
+set_isolation iso_B2C -domain pd_modB -isolation_power_net VDDL -isolation_ground_net VSS -clamp_value 0 -elements {B_inst/lav_B_out0_2C}
+set_isolation iso_B2ATop1 -domain pd_modB -isolation_power_net VDDL -isolation_ground_net VSS -clamp_value 0 -elements {B_inst/lav_B2A}
+set_isolation iso_B2DTop2 -domain pd_modB -isolation_power_net VDDL -isolation_ground_net VSS -clamp_value 0 -elements {B_inst/lav_B2D}
+set_isolation iso_B2Top3 -domain pd_modB -isolation_power_net VDDL -isolation_ground_net VSS -clamp_value 0 -elements {B_inst/lav_done}
+
+set_isolation iso_C2Top1 -domain pd_modC -isolation_power_net VDDL -isolation_ground_net VSS -clamp_value 1 -elements {C_inst/lav_out_C1}
+set_isolation iso_C2Top2 -domain pd_modC -isolation_power_net VDDL -isolation_ground_net VSS -clamp_value 1 -elements {C_inst/lav_out_C2}
+set_isolation iso_C2Top3 -domain pd_modC -isolation_power_net VDDL -isolation_ground_net VSS -clamp_value 1 -elements {C_inst/lav_out_C3}
+set_isolation iso_C2B1 -domain pd_modC -isolation_power_net VDDL -isolation_ground_net VSS -clamp_value 1 -elements {C_inst/lav_out_C2B_1}
+set_isolation iso_C2B2 -domain pd_modC -isolation_power_net VDDL -isolation_ground_net VSS -clamp_value 1 -elements {C_inst/lav_out_C2B_2}
+set_isolation iso_C2B3 -domain pd_modC -isolation_power_net VDDL -isolation_ground_net VSS -clamp_value 1 -elements {C_inst/lav_out_C2B_3}
+set_isolation iso_C2B4 -domain pd_modC -isolation_power_net VDDL -isolation_ground_net VSS -clamp_value 1 -elements {C_inst/lav_out_C2B_4}
+set_isolation iso_C2B5 -domain pd_modC -isolation_power_net VDDL -isolation_ground_net VSS -clamp_value 1 -elements {C_inst/lav_out_C2B_5}
+set_isolation iso_C2A -domain pd_modC -isolation_power_net VDDL -isolation_ground_net VSS -clamp_value 1 -elements {C_inst/lav_C2A}
+set_isolation iso_C2D -domain pd_modC -isolation_power_net VDDL -isolation_ground_net VSS -clamp_value 1 -elements {C_inst/lav_C2D}
+
+set_isolation iso_D2B -domain pd_modD -isolation_power_net VDDH -isolation_ground_net VSS -clamp_value 1 -elements {D_inst/lav_D_eq_2B}
+set_isolation iso_D2A -domain pd_modD -isolation_power_net VDDH -isolation_ground_net VSS -clamp_value 1 -elements {D_inst/lav_D_cin_2A}
+set_isolation iso_D2C -domain pd_modD -isolation_power_net VDDH -isolation_ground_net VSS -clamp_value 1 -elements {D_inst/lav_D_less_2C}
+set_isolation iso_D2Top -domain pd_modD -isolation_power_net VDDH -isolation_ground_net VSS -clamp_value 1 -elements {D_inst/lav_Dout}
+
+set_isolation_control iso_A2BCTop -domain pd_modA -isolation_signal ctrl_A -isolation_sense low -location parent
+set_isolation_control iso_A2D -domain pd_modA -isolation_signal ctrl_A -isolation_sense low -location parent
+
+set_isolation_control iso_B2C -domain pd_modB -isolation_signal ctrl_B -isolation_sense low -location parent
+set_isolation_control iso_B2ATop1 -domain pd_modB -isolation_signal ctrl_B -isolation_sense low -location parent
+set_isolation_control iso_B2DTop2 -domain pd_modB -isolation_signal ctrl_B -isolation_sense low -location parent
+set_isolation_control iso_B2Top3 -domain pd_modB -isolation_signal ctrl_B -isolation_sense low -location parent
+
+set_isolation_control iso_C2Top1 -domain pd_modC -isolation_signal ctrl_C -isolation_sense low -location parent
+set_isolation_control iso_C2Top2 -domain pd_modC -isolation_signal ctrl_C -isolation_sense low -location parent
+set_isolation_control iso_C2Top3 -domain pd_modC -isolation_signal ctrl_C -isolation_sense low -location parent
+set_isolation_control iso_C2B1 -domain pd_modC -isolation_signal ctrl_C -isolation_sense low -location parent
+set_isolation_control iso_C2B2 -domain pd_modC -isolation_signal ctrl_C -isolation_sense low -location parent
+set_isolation_control iso_C2B3 -domain pd_modC -isolation_signal ctrl_C -isolation_sense low -location parent
+set_isolation_control iso_C2B4 -domain pd_modC -isolation_signal ctrl_C -isolation_sense low -location parent
+set_isolation_control iso_C2B5 -domain pd_modC -isolation_signal ctrl_C -isolation_sense low -location parent
+set_isolation_control iso_C2A -domain pd_modC -isolation_signal ctrl_C -isolation_sense low -location parent
+set_isolation_control iso_C2D -domain pd_modC -isolation_signal ctrl_C -isolation_sense low -location parent
+
+set_isolation_control iso_D2B -domain pd_modD -isolation_signal ctrl_D -isolation_sense low -location parent
+set_isolation_control iso_D2A -domain pd_modD -isolation_signal ctrl_D -isolation_sense low -location parent
+set_isolation_control iso_D2C -domain pd_modD -isolation_signal ctrl_D -isolation_sense low -location parent
+set_isolation_control iso_D2Top -domain pd_modD -isolation_signal ctrl_D -isolation_sense low -location parent
+
+#power state definitions
+add_port_state VDDH -state {on 1.16} -state {off 0.0}
+add_port_state VDDL -state {on 0.85} -state {off 0.0}
+add_port_state VSS -state {off 0.0}
+add_port_state A_switch/VDDH_A -state {on 1.16} -state {off off}
+add_port_state B_switch/VDDL_B -state {on 0.85} -state {off off}
+add_port_state C_switch/VDDL_C -state {on 0.85} -state {off off}
+add_port_state D_switch/VDDH_D -state {on 1.16} -state {off off}
+
+#power state table
+create_pst my_pst -supplies {VDDH VDDL VSS A_switch/VDDH_A B_switch/VDDL_B C_switch/VDDL_C D_switch/VDDH_D }
+add_pst_state s1 -pst my_pst -state {on on off off on off on}
+add_pst_state s2 -pst my_pst -state {on on off on off on off}
+add_pst_state s3 -pst my_pst -state {on on off off off off on}
+add_pst_state s4 -pst my_pst -state {on on off off on off off}
+
+
+
+
+
+
+
+
+
+
+
+

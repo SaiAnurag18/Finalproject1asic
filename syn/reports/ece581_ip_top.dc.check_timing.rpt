@@ -1,0 +1,34 @@
+
+Information: Checking generated_clocks...
+
+Information: Checking loops...
+
+Information: Checking no_input_delay...
+Warning: The following input ports have no clock_relative delay specified, the command set_input_delay without -clock option will be ignored. (TIM-216)
+--------------------
+lav_reset
+ctrl_A
+ctrl_B
+ctrl_C
+ctrl_D
+
+Information: Checking unconstrained_endpoints...
+
+Warning: The following end-points are not constrained for maximum delay.
+
+End point
+---------------
+A_inst/lav_C_reg_1_/RSTB
+A_inst/lav_Cout_BC_reg/RSTB
+A_inst/lav_P_reg_0_/RSTB
+A_inst/lav_P_reg_1_/RSTB
+A_inst/lav_P_reg_2_/RSTB
+A_inst/lav_P_reg_3_/RSTB
+A_inst/lav_P_reg_4_/RSTB
+
+Information: Checking pulse_clock_cell_type...
+
+Information: Checking no_driving_cell...
+
+Information: Checking partial_input_delay...
+1

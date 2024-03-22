@@ -1,0 +1,129 @@
+--------------------------------------------------------------------------------
+                            Clock Gating Style Checks
+--------------------------------------------------------------------------------
+No clock gating style defined yet.
+
+--------------------------------------------------------------------------------
+                         Target Library Subset Checks
+--------------------------------------------------------------------------------
+No Errors/Warnings Found.
+
+--------------------------------------------------------------------------------
+                             Level Shifter Checks
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+                        Level Shifter Checks Summary
+--------------------------------------------------------------------------------
+Warning: Found 33 pin to pin connections requiring level shifter(s).  (MV-229)
+Warning: Pin 'snps_iso_control_inv_1/Y'(VDDH[1.16v]) cannot drive 'snps_pd_modC__iso_C2Top3_snps_lav_out_C3_UPF_ISO/ISO'(VDDL[0.85v]) due to voltage differences (effective strategy is [rule = undefined, threshold = 0.00]). (MV-231)
+Warning: Pin 'snps_iso_control_inv_1/Y'(VDDH[1.16v]) cannot drive 'snps_pd_modC__iso_C2B5_snps_lav_out_C2B_5_UPF_ISO/ISO'(VDDL[0.85v]) due to voltage differences (effective strategy is [rule = undefined, threshold = 0.00]). (MV-231)
+Warning: Pin 'snps_iso_control_inv_1/Y'(VDDH[1.16v]) cannot drive 'snps_pd_modC__iso_C2B2_snps_lav_out_C2B_2_UPF_ISO/ISO'(VDDL[0.85v]) due to voltage differences (effective strategy is [rule = undefined, threshold = 0.00]). (MV-231)
+Warning: Pin 'snps_iso_control_inv_1/Y'(VDDH[1.16v]) cannot drive 'snps_pd_modC__iso_C2Top2_snps_lav_out_C2_UPF_ISO/ISO'(VDDL[0.85v]) due to voltage differences (effective strategy is [rule = undefined, threshold = 0.00]). (MV-231)
+Warning: Pin 'snps_iso_control_inv_1/Y'(VDDH[1.16v]) cannot drive 'snps_pd_modC__iso_C2B4_snps_lav_out_C2B_4_UPF_ISO/ISO'(VDDL[0.85v]) due to voltage differences (effective strategy is [rule = undefined, threshold = 0.00]). (MV-231)
+Warning: Pin 'snps_iso_control_inv_1/Y'(VDDH[1.16v]) cannot drive 'snps_pd_modC__iso_C2B1_snps_lav_out_C2B_1_UPF_ISO/ISO'(VDDL[0.85v]) due to voltage differences (effective strategy is [rule = undefined, threshold = 0.00]). (MV-231)
+Warning: Pin 'snps_iso_control_inv_1/Y'(VDDH[1.16v]) cannot drive 'snps_pd_modC__iso_C2D_snps_lav_C2D_UPF_ISO/ISO'(VDDL[0.85v]) due to voltage differences (effective strategy is [rule = undefined, threshold = 0.00]). (MV-231)
+Warning: Pin 'snps_iso_control_inv_1/Y'(VDDH[1.16v]) cannot drive 'snps_pd_modC__iso_C2Top1_snps_lav_out_C1_UPF_ISO/ISO'(VDDL[0.85v]) due to voltage differences (effective strategy is [rule = undefined, threshold = 0.00]). (MV-231)
+Warning: Pin 'snps_iso_control_inv_1/Y'(VDDH[1.16v]) cannot drive 'snps_pd_modC__iso_C2B3_snps_lav_out_C2B_3_UPF_ISO/ISO'(VDDL[0.85v]) due to voltage differences (effective strategy is [rule = undefined, threshold = 0.00]). (MV-231)
+Warning: Pin 'snps_iso_control_inv_1/Y'(VDDH[1.16v]) cannot drive 'snps_pd_modC__iso_C2A_snps_lav_C2A_UPF_ISO/ISO'(VDDL[0.85v]) due to voltage differences (effective strategy is [rule = undefined, threshold = 0.00]). (MV-231)
+Warning: Pin 'snps_iso_control_inv_2/Y'(VDDH[1.16v]) cannot drive 'snps_pd_modB__iso_B2ATop1_snps_lav_B2A_UPF_ISO/ISO'(VDDL[0.85v]) due to voltage differences (effective strategy is [rule = undefined, threshold = 0.00]). (MV-231)
+Warning: Pin 'snps_iso_control_inv_2/Y'(VDDH[1.16v]) cannot drive 'snps_pd_modB__iso_B2C_snps_lav_B_out0_2C_UPF_ISO/ISO'(VDDL[0.85v]) due to voltage differences (effective strategy is [rule = undefined, threshold = 0.00]). (MV-231)
+Warning: Pin 'snps_iso_control_inv_2/Y'(VDDH[1.16v]) cannot drive 'snps_pd_modB__iso_B2DTop2_snps_lav_B2D_UPF_ISO/ISO'(VDDL[0.85v]) due to voltage differences (effective strategy is [rule = undefined, threshold = 0.00]). (MV-231)
+Warning: Pin 'snps_iso_control_inv_2/Y'(VDDH[1.16v]) cannot drive 'snps_pd_modB__iso_B2Top3_snps_lav_done_UPF_ISO/ISO'(VDDL[0.85v]) due to voltage differences (effective strategy is [rule = undefined, threshold = 0.00]). (MV-231)
+Warning: Pin 'upf_clk'(VDDH[1.16v]) cannot drive 'C_inst/lav_out_C2B_4_reg/CLK'(VDDL_C[0.85v]) due to voltage differences (effective strategy is [rule = both, threshold = 0.00]). (MV-231)
+Warning: Pin 'upf_clk'(VDDH[1.16v]) cannot drive 'C_inst/lav_out_C2B_3_reg/CLK'(VDDL_C[0.85v]) due to voltage differences (effective strategy is [rule = both, threshold = 0.00]). (MV-231)
+Warning: Pin 'upf_clk'(VDDH[1.16v]) cannot drive 'C_inst/lav_out_C2B_2_reg/CLK'(VDDL_C[0.85v]) due to voltage differences (effective strategy is [rule = both, threshold = 0.00]). (MV-231)
+Warning: Pin 'upf_clk'(VDDH[1.16v]) cannot drive 'C_inst/lav_out_C2B_1_reg/CLK'(VDDL_C[0.85v]) due to voltage differences (effective strategy is [rule = both, threshold = 0.00]). (MV-231)
+Warning: Pin 'upf_clk'(VDDH[1.16v]) cannot drive 'C_inst/lav_out_C3_reg/CLK'(VDDL_C[0.85v]) due to voltage differences (effective strategy is [rule = both, threshold = 0.00]). (MV-231)
+Warning: Pin 'upf_clk'(VDDH[1.16v]) cannot drive 'C_inst/lav_out_C2_reg/CLK'(VDDL_C[0.85v]) due to voltage differences (effective strategy is [rule = both, threshold = 0.00]). (MV-231)
+Warning: Pin 'upf_clk'(VDDH[1.16v]) cannot drive 'C_inst/lav_C2D_reg/CLK'(VDDL_C[0.85v]) due to voltage differences (effective strategy is [rule = both, threshold = 0.00]). (MV-231)
+Warning: Pin 'upf_clk'(VDDH[1.16v]) cannot drive 'C_inst/lav_C2A_reg/CLK'(VDDL_C[0.85v]) due to voltage differences (effective strategy is [rule = both, threshold = 0.00]). (MV-231)
+Warning: Pin 'upf_clk'(VDDH[1.16v]) cannot drive 'C_inst/lav_out_C1_reg/CLK'(VDDL_C[0.85v]) due to voltage differences (effective strategy is [rule = both, threshold = 0.00]). (MV-231)
+Warning: Pin 'upf_clk'(VDDH[1.16v]) cannot drive 'C_inst/lav_out_C2B_5_reg/CLK'(VDDL_C[0.85v]) due to voltage differences (effective strategy is [rule = both, threshold = 0.00]). (MV-231)
+Warning: Pin 'upf_clk'(VDDH[1.16v]) cannot drive 'B_inst/lav_done_reg/CLK'(VDDL_B[0.85v]) due to voltage differences (effective strategy is [rule = both, threshold = 0.00]). (MV-231)
+Warning: Pin 'upf_clk'(VDDH[1.16v]) cannot drive 'B_inst/i_reg_6_/CLK'(VDDL_B[0.85v]) due to voltage differences (effective strategy is [rule = both, threshold = 0.00]). (MV-231)
+Warning: Pin 'upf_clk'(VDDH[1.16v]) cannot drive 'B_inst/i_reg_0_/CLK'(VDDL_B[0.85v]) due to voltage differences (effective strategy is [rule = both, threshold = 0.00]). (MV-231)
+Warning: Pin 'upf_clk'(VDDH[1.16v]) cannot drive 'B_inst/i_reg_1_/CLK'(VDDL_B[0.85v]) due to voltage differences (effective strategy is [rule = both, threshold = 0.00]). (MV-231)
+Warning: Pin 'upf_clk'(VDDH[1.16v]) cannot drive 'B_inst/i_reg_2_/CLK'(VDDL_B[0.85v]) due to voltage differences (effective strategy is [rule = both, threshold = 0.00]). (MV-231)
+Warning: Pin 'upf_clk'(VDDH[1.16v]) cannot drive 'B_inst/i_reg_3_/CLK'(VDDL_B[0.85v]) due to voltage differences (effective strategy is [rule = both, threshold = 0.00]). (MV-231)
+Warning: Pin 'upf_clk'(VDDH[1.16v]) cannot drive 'B_inst/i_reg_4_/CLK'(VDDL_B[0.85v]) due to voltage differences (effective strategy is [rule = both, threshold = 0.00]). (MV-231)
+Warning: Pin 'upf_clk'(VDDH[1.16v]) cannot drive 'B_inst/i_reg_5_/CLK'(VDDL_B[0.85v]) due to voltage differences (effective strategy is [rule = both, threshold = 0.00]). (MV-231)
+Warning: Pin 'upf_clk'(VDDH[1.16v]) cannot drive 'B_inst/i_reg_7_/CLK'(VDDL_B[0.85v]) due to voltage differences (effective strategy is [rule = both, threshold = 0.00]). (MV-231)
+
+--------------------------------------------------------------------------------
+                             Power Domain Checks
+--------------------------------------------------------------------------------
+Information: Isolation cell snps_pd_modA__iso_A2BCTop_snps_lav_Cout_BC_UPF_ISO is NOT redundant (required by some of its connection(s)), but it's not required for the connection(s): A_inst/lav_Cout_BC_reg/Q (related supply net (VDDH_A,VSS)) and C_inst/lav_in1_1__UPF_LS/A (related supply net (VDDL_C,VSS)). (MV-534)
+No Errors/Warnings Found.
+
+--------------------------------------------------------------------------------
+                               Always On Checks
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+                         Always On Checks Summary
+--------------------------------------------------------------------------------
+No Errors/Warnings Found.
+
+--------------------------------------------------------------------------------
+                 Design And Library Operating Condition Checks
+--------------------------------------------------------------------------------
+No Errors/Warnings Found.
+
+--------------------------------------------------------------------------------
+                        Cell Operating Condition Checks
+--------------------------------------------------------------------------------
+No Errors/Warnings Found.
+
+--------------------------------------------------------------------------------
+           Power Domain and Operating Condition Consistency Checks
+--------------------------------------------------------------------------------
+No Errors/Warnings Found.
+--------------------------------------------------------------------------------
+                      Power/Ground Pin Connection Checks
+--------------------------------------------------------------------------------
+Warning: No port state has been defined on any supply port connected to supply net ctrl_A. (UPF-506)
+Warning: No port state has been defined on any supply port connected to supply net ctrl_B. (UPF-506)
+Warning: No port state has been defined on any supply port connected to supply net ctrl_C. (UPF-506)
+Warning: No port state has been defined on any supply port connected to supply net ctrl_D. (UPF-506)
+
+--------------------------------------------------------------------------------
+                         Supply Operating Voltage Checks
+--------------------------------------------------------------------------------
+No Errors/Warnings Found.
+
+--------------------------------------------------------------------------------
+                                 Model checks
+--------------------------------------------------------------------------------
+No Errors/Warnings Found.
+
+--------------------------------------------------------------------------------
+                          Retention Synthesis Checks
+--------------------------------------------------------------------------------
+No Errors/Warnings Found.
+
+--------------------------------------------------------------------------------
+                          Isolation Synthesis Checks
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+                 Isolation Library Cell PG Pin Checks Summary
+--------------------------------------------------------------------------------
+No Errors/Warnings Found.
+
+--------------------------------------------------------------------------------
+                         Mapped Power Switches Checks
+--------------------------------------------------------------------------------
+No Errors/Warnings Found.
+
+--------------------------------------------------------------------------------
+                       Power Domains Root Cells Checks
+--------------------------------------------------------------------------------
+No Errors/Warnings Found.
+
+--------------------------------------------------------------------------------
+                                Analog Checks
+--------------------------------------------------------------------------------
+No Errors/Warnings Found.
+
+Please review report above for warnings and errors.
+1

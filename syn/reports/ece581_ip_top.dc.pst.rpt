@@ -1,0 +1,46 @@
+ 
+****************************************
+Report : power state table
+Design : ece581_ip_top
+Version: Q-2019.12-SP3
+Date   : Fri Mar 22 14:40:27 2024
+****************************************
+
+Scope: ece581_ip_top
+Supply Names:  VDDH, VDDL, VSS, ctrl_A, ctrl_B, ctrl_C, ctrl_D, ctrl_A, ctrl_B, ctrl_C, ctrl_D, A_switch/VDDH_A, B_switch/VDDL_B, C_switch/VDDL_C, D_switch/VDDH_D,
+Resulting Power States in this Scope:
+                 VDDH|
+                            VDDL|
+                                        VSS|
+                                                ctrl_A|
+                                                           ctrl_B|
+                                                                      ctrl_C|
+                                                                                 ctrl_D|
+                                                                                            ctrl_A|
+                                                                                                       ctrl_B|
+                                                                                                                  ctrl_C|
+                                                                                                                             ctrl_D|
+                                                                                                                               A_switch/VDDH_A|
+                                                                                                                                          B_switch/VDDL_B|
+                                                                                                                                                     C_switch/VDDL_C|
+                                                                                                                                                                D_switch/VDDH_D|
+       drv:        on|        on|         *| UNDEFINED| UNDEFINED| UNDEFINED| UNDEFINED|         *|         *|         *|         *|        on|       off|        on|       off|
+       drv:        on|        on|         *| UNDEFINED| UNDEFINED| UNDEFINED| UNDEFINED|         *|         *|         *|         *|       off|        on|       off|         *|
+       drv:        on|        on|         *| UNDEFINED| UNDEFINED| UNDEFINED| UNDEFINED|         *|         *|         *|         *|       off|         *|       off|        on|
+
+User PST Name: my_pst
+Defined in Scope: ece581_ip_top
+Total Power States: 4
+            VDDH|
+                 VDDL|
+                       VSS|
+                A_switch/VDDH_A|
+                     B_switch/VDDL_B|
+                          C_switch/VDDL_C|
+                               D_switch/VDDH_D|
+  s1:         on|  on| off| off|  on| off|  on|
+  s2:         on|  on| off|  on| off|  on| off|
+  s3:         on|  on| off| off| off| off|  on|
+  s4:         on|  on| off| off|  on| off| off|
+
+1

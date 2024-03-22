@@ -1,0 +1,98 @@
+ 
+****************************************
+Report : isolation_cell
+Design : ece581_ip_top
+Version: Q-2019.12-SP3
+Date   : Fri Mar 22 14:40:27 2024
+****************************************
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+ Power Domain  :  pd_modA
+
+=========================================================================================================================
+| Port                   | Boundary | Port Dir.| ISO Cell Name                | ISO Lib Cell       | ISO Strategy       |
+=========================================================================================================================
+| A_inst/lav_A2D[1]      | LowConn  | Out      | snps_pd_modA__iso_A2D_snps_lav_A2D_1__UPF_ISO
+                                                                              | ISOLANDX2_HVT      | iso_A2D            |
+| A_inst/lav_A2D[6]      | LowConn  | Out      | snps_pd_modA__iso_A2D_snps_lav_A2D_6__UPF_ISO
+                                                                              | ISOLANDX1_HVT      | iso_A2D            |
+| A_inst/lav_A2D[5]      | LowConn  | Out      | snps_pd_modA__iso_A2D_snps_lav_A2D_5__UPF_ISO
+                                                                              | ISOLANDX1_HVT      | iso_A2D            |
+| A_inst/lav_A2D[4]      | LowConn  | Out      | snps_pd_modA__iso_A2D_snps_lav_A2D_4__UPF_ISO
+                                                                              | ISOLANDX1_HVT      | iso_A2D            |
+| A_inst/lav_A2D[3]      | LowConn  | Out      | snps_pd_modA__iso_A2D_snps_lav_A2D_3__UPF_ISO
+                                                                              | ISOLANDX1_HVT      | iso_A2D            |
+| A_inst/lav_A2D[2]      | LowConn  | Out      | snps_pd_modA__iso_A2D_snps_lav_A2D_2__UPF_ISO
+                                                                              | ISOLANDX1_HVT      | iso_A2D            |
+| A_inst/lav_A2D[0]      | LowConn  | Out      | snps_pd_modA__iso_A2D_snps_lav_A2D_0__UPF_ISO
+                                                                              | ISOLANDX1_HVT      | iso_A2D            |
+| A_inst/lav_Cout_BC     | LowConn  | Out      | snps_pd_modA__iso_A2BCTop_snps_lav_Cout_BC_UPF_ISO
+                                                                              | ISOLANDX1_HVT      | iso_A2BCTop        |
+=========================================================================================================================
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+ Power Domain  :  pd_modD
+
+=========================================================================================================================
+| Port                   | Boundary | Port Dir.| ISO Cell Name                | ISO Lib Cell       | ISO Strategy       |
+=========================================================================================================================
+| D_inst/lav_D_less_2C   | LowConn  | Out      | snps_pd_modD__iso_D2C_snps_lav_D_less_2C_UPF_ISO
+                                                                              | ISOLORX2_HVT       | iso_D2C            |
+| D_inst/lav_D_cin_2A    | LowConn  | Out      | snps_pd_modD__iso_D2A_snps_lav_D_cin_2A_UPF_ISO
+                                                                              | ISOLORX1_HVT       | iso_D2A            |
+| D_inst/lav_D_eq_2B     | LowConn  | Out      | snps_pd_modD__iso_D2B_snps_lav_D_eq_2B_UPF_ISO
+                                                                              | ISOLORX1_HVT       | iso_D2B            |
+| D_inst/lav_Dout        | LowConn  | Out      | snps_pd_modD__iso_D2Top_snps_lav_Dout_UPF_ISO
+                                                                              | ISOLORX1_HVT       | iso_D2Top          |
+=========================================================================================================================
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+ Power Domain  :  pd_modB
+
+=========================================================================================================================
+| Port                   | Boundary | Port Dir.| ISO Cell Name                | ISO Lib Cell       | ISO Strategy       |
+=========================================================================================================================
+| B_inst/lav_B2A         | LowConn  | Out      | snps_pd_modB__iso_B2ATop1_snps_lav_B2A_UPF_ISO
+                                                                              | ISOLANDAOX1_HVT    | iso_B2ATop1        |
+| B_inst/lav_B_out0_2C   | LowConn  | Out      | snps_pd_modB__iso_B2C_snps_lav_B_out0_2C_UPF_ISO
+                                                                              | ISOLANDAOX1_HVT    | iso_B2C            |
+| B_inst/lav_B2D         | LowConn  | Out      | snps_pd_modB__iso_B2DTop2_snps_lav_B2D_UPF_ISO
+                                                                              | ISOLANDAOX1_HVT    | iso_B2DTop2        |
+| B_inst/lav_done        | LowConn  | Out      | snps_pd_modB__iso_B2Top3_snps_lav_done_UPF_ISO
+                                                                              | ISOLANDAOX1_HVT    | iso_B2Top3         |
+=========================================================================================================================
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+ Power Domain  :  pd_modC
+
+=========================================================================================================================
+| Port                   | Boundary | Port Dir.| ISO Cell Name                | ISO Lib Cell       | ISO Strategy       |
+=========================================================================================================================
+| C_inst/lav_C2A         | LowConn  | Out      | snps_pd_modC__iso_C2A_snps_lav_C2A_UPF_ISO
+                                                                              | ISOLORAOX1_HVT     | iso_C2A            |
+| C_inst/lav_out_C2B_1   | LowConn  | Out      | snps_pd_modC__iso_C2B1_snps_lav_out_C2B_1_UPF_ISO
+                                                                              | ISOLORAOX1_HVT     | iso_C2B1           |
+| C_inst/lav_out_C2B_2   | LowConn  | Out      | snps_pd_modC__iso_C2B2_snps_lav_out_C2B_2_UPF_ISO
+                                                                              | ISOLORAOX1_HVT     | iso_C2B2           |
+| C_inst/lav_out_C2B_3   | LowConn  | Out      | snps_pd_modC__iso_C2B3_snps_lav_out_C2B_3_UPF_ISO
+                                                                              | ISOLORAOX1_HVT     | iso_C2B3           |
+| C_inst/lav_out_C2B_4   | LowConn  | Out      | snps_pd_modC__iso_C2B4_snps_lav_out_C2B_4_UPF_ISO
+                                                                              | ISOLORAOX1_HVT     | iso_C2B4           |
+| C_inst/lav_out_C2B_5   | LowConn  | Out      | snps_pd_modC__iso_C2B5_snps_lav_out_C2B_5_UPF_ISO
+                                                                              | ISOLORAOX1_HVT     | iso_C2B5           |
+| C_inst/lav_out_C1      | LowConn  | Out      | snps_pd_modC__iso_C2Top1_snps_lav_out_C1_UPF_ISO
+                                                                              | ISOLORAOX1_HVT     | iso_C2Top1         |
+| C_inst/lav_out_C2      | LowConn  | Out      | snps_pd_modC__iso_C2Top2_snps_lav_out_C2_UPF_ISO
+                                                                              | ISOLORAOX1_HVT     | iso_C2Top2         |
+| C_inst/lav_out_C3      | LowConn  | Out      | snps_pd_modC__iso_C2Top3_snps_lav_out_C3_UPF_ISO
+                                                                              | ISOLORAOX1_HVT     | iso_C2Top3         |
+| C_inst/lav_C2D         | LowConn  | Out      | snps_pd_modC__iso_C2D_snps_lav_C2D_UPF_ISO
+                                                                              | ISOLORAOX1_HVT     | iso_C2D            |
+=========================================================================================================================
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+1

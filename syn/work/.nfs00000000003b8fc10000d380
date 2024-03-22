@@ -1,0 +1,14 @@
+# Cadence Genus(TM) Synthesis Solution, Version 19.12-s121_1, built Dec  3 2019 15:07:17
+
+# Date: Sun Feb 25 22:37:11 2024
+# Host: auto.ece.pdx.edu (x86_64 w/Linux 3.10.0-1160.105.1.el7.x86_64) (1core*60cpus*60physical cpus*Intel Xeon E312xx (Sandy Bridge, IBRS update) 16384KB)
+# OS:   CentOS Linux release 7.9.2009 (Core)
+
+# Cadence Genus(TM) Synthesis Solution, Version 19.12-s121_1, built Dec  3 2019 15:07:17
+
+# Date: Sun Feb 25 22:37:23 2024
+# Host: auto.ece.pdx.edu (x86_64 w/Linux 3.10.0-1160.105.1.el7.x86_64) (1core*60cpus*60physical cpus*Intel Xeon E312xx (Sandy Bridge, IBRS update) 16384KB)
+# OS:   CentOS Linux release 7.9.2009 (Core)
+
+set top_design ORCA_TOP
+source ../scripts/genus.tcl

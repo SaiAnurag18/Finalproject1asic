@@ -1,0 +1,50 @@
+ 
+****************************************
+Report : reference
+Design : ece581_ip_top
+Version: Q-2019.12-SP3
+Date   : Fri Mar 22 14:40:27 2024
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AOBUFX1_HVT        saed32hvt_ff0p85v125c
+                                  7.116032       1      7.116032  
+INVX0_HVT          saed32hvt_ff1p16v125c
+                                  1.270720       4      5.082880  
+ISOLANDAOX1_HVT    saed32hvt_ff0p85v125c
+                                  5.591168       4     22.364672  
+ISOLANDX1_HVT      saed32hvt_ff1p16v125c
+                                  2.541440       7     17.790080  
+ISOLANDX2_HVT      saed32hvt_ff1p16v125c
+                                  2.795584       1      2.795584  
+ISOLORAOX1_HVT     saed32hvt_ff0p85v125c
+                                  5.845312      10     58.453121  
+ISOLORX1_HVT       saed32hvt_ff1p16v125c
+                                  2.033152       3      6.099456  
+ISOLORX2_HVT       saed32hvt_ff1p16v125c
+                                  2.287296       1      2.287296  
+LSUPX1_HVT         saed32hvt_ulvl_ff1p16v125c_i0p85v
+                                  7.116032       9     64.044289  
+LSUPX2_HVT         saed32hvt_ulvl_ff1p16v125c_i0p85v
+                                  7.624320       1      7.624320  
+NBUFFX2_HVT        saed32hvt_ff1p16v125c
+                                  2.033152       3      6.099456  
+modA                            258.972735       1    258.972735  h, n
+modB                            123.768130       1    123.768130  h, n
+modC                            123.768131       1    123.768131  h, n
+modD                            125.038850       1    125.038850  h, n
+-----------------------------------------------------------------------------
+Total 15 references                                   831.305033
+1

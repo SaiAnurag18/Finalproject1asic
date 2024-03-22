@@ -1,0 +1,44 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : ece581_ip_top
+Version: Q-2019.12-SP3
+Date   : Fri Mar 22 14:40:27 2024
+****************************************
+
+
+   max_delay/setup ('upf_clk' group)
+
+                             Required        Actual
+   Endpoint                 Path Delay     Path Delay        Slack
+   -----------------------------------------------------------------
+   D_inst/lav_D_eq_2B_reg/D     0.98           1.01 r        -0.03  (VIOLATED)
+   D_inst/lav_D_less_2C_reg/D
+                                0.98           1.01 r        -0.03  (VIOLATED)
+   C_inst/lav_out_C2B_1_reg/D
+                                0.96           0.97 r        -0.01  (VIOLATED)
+   C_inst/lav_out_C3_reg/D      0.96           0.97 r         0.00  (VIOLATED: increase significant digits)
+
+
+   min_capacitance
+
+                             Required        Actual
+   Net                      Capacitance    Capacitance       Slack
+   -----------------------------------------------------------------
+   lav_Dout                     1.00           0.00          -1.00  (VIOLATED)
+   lav_D_eq_2B                  1.00           0.38          -0.62  (VIOLATED)
+
+   -----------------------------------------------------------------
+   Total                      2                  -1.61  
+
+   max_leakage_power
+
+                             Required        Actual
+   Design                   Leakage Power  Leakage Power     Slack
+   -----------------------------------------------------------------
+   ece581_ip_top                0.00       2325830400.00  -2325830400.00
+                                                                    (VIOLATED)
+
+
+1

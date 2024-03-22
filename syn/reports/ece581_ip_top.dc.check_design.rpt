@@ -1,0 +1,31 @@
+ 
+****************************************
+check_design summary:
+Version:     Q-2019.12-SP3
+Date:        Fri Mar 22 14:40:27 2024
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      7
+    Unconnected ports (LINT-28)                                     6
+    Constant outputs (LINT-52)                                      1
+
+Cells                                                               1
+    Connected to power or ground (LINT-32)                          1
+
+Nets                                                                1
+    Unloaded nets (LINT-2)                                          1
+--------------------------------------------------------------------------------
+
+Warning: In design 'ece581_ip_top', net 'SYNOPSYS_UNCONNECTED_1' driven by pin 'A_inst/lav_A2D[7]' has no loads. (LINT-2)
+Warning: In design 'ece581_ip_top', port 'pwr_cntrl_A' is not connected to any nets. (LINT-28)
+Warning: In design 'ece581_ip_top', port 'pwr_cntrl_B' is not connected to any nets. (LINT-28)
+Warning: In design 'ece581_ip_top', port 'pwr_cntrl_C' is not connected to any nets. (LINT-28)
+Warning: In design 'ece581_ip_top', port 'pwr_cntrl_D' is not connected to any nets. (LINT-28)
+Warning: In design 'modA', port 'lav_A2D[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'modD', port 'lav_A2D[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'ece581_ip_top', a pin on submodule 'D_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'lav_A2D[7]' is connected to logic 0. 
+Warning: In design 'ece581_ip_top', output port 'lav_A2D[7]' is connected directly to 'logic 0'. (LINT-52)
+1
